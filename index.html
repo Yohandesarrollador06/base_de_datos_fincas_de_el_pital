@@ -196,21 +196,21 @@
 <script>
     // Lista de fincas
     const fincas = [
-        { nombre: "El Nicho", ubicacion: "Huila", tipo: "procesado", url: "#", img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_-EHYTvgBz-dUWr7YPNz8SzfFia7d4yQcjupoPu5Kq5UIhRkEZAyPjmdURMhyX5tINwWMPwC0bHCosXGwUu-teXF-4DOKlgCMb1fm7_YU7pu_0V2rujUrvcfQDuDGalyQkogXhp3yTkkQDBnoaNUeyDqoRmgcYWmZDRhV2Sj0eCjJvUjm23nPqJPwAj4/s1600/1.jpg" },
+        { nombre: "El Nicho", ubicacion: "Huila, url: "#", img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_-EHYTvgBz-dUWr7YPNz8SzfFia7d4yQcjupoPu5Kq5UIhRkEZAyPjmdURMhyX5tINwWMPwC0bHCosXGwUu-teXF-4DOKlgCMb1fm7_YU7pu_0V2rujUrvcfQDuDGalyQkogXhp3yTkkQDBnoaNUeyDqoRmgcYWmZDRhV2Sj0eCjJvUjm23nPqJPwAj4/s1600/1.jpg" },
         
-        { nombre: "Villa del Pilar", ubicacion: "Huila", tipo: "procesado", url: "https://yohandesarrollador06.github.io/base_de_datos_finca_villa_del_pilar.github.io/", img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiufsxn8qgtFlEQBo8QR2A7kPIQbNJVW_C8ZorBCNkaNFn2-gjqzYcUEhwF0M__yIgmXUqvlCKS2NxGiYCS-HTiEdxNiDea-1AFNvA6jbY693uW52lhFRhOSE4Btg9mGJVtkdo9xgT43-PzsJut4Gc7YbJPTsyylIT-oTeXfyWZfApeDJ2ypJA69Dl_Mpo/s1600/logo%20villa%20del%20pilar.jpg" },
+        { nombre: "Villa del Pilar", ubicacion: "Huila", url: "https://yohandesarrollador06.github.io/base_de_datos_finca_villa_del_pilar.github.io/", img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiufsxn8qgtFlEQBo8QR2A7kPIQbNJVW_C8ZorBCNkaNFn2-gjqzYcUEhwF0M__yIgmXUqvlCKS2NxGiYCS-HTiEdxNiDea-1AFNvA6jbY693uW52lhFRhOSE4Btg9mGJVtkdo9xgT43-PzsJut4Gc7YbJPTsyylIT-oTeXfyWZfApeDJ2ypJA69Dl_Mpo/s1600/logo%20villa%20del%20pilar.jpg" },
         
-        { nombre: "Café Rubiel", ubicacion: "Huila", tipo: "sin procesar", url: "#", img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-fRS51BzWlfjhR6TRF6lb3DgxxSe6GrXFECRmJEbCnyOTUajdyhux9FhXOQQY0vBJ1udnEjZm_vrCwKZgWldxHmBw5vVurYRtQjEi2c8hFjmTxAVHyprZxoDdQKA9hSazp-ZZ0RyTW3RGyC8WHhO1eKZh5Y8yI3GDAiiiw5DI-HvivGLSr0A0nusUka0/s1600/1.jpg" },
+        { nombre: "Café Rubiel", ubicacion: "Huila", url: "#", img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-fRS51BzWlfjhR6TRF6lb3DgxxSe6GrXFECRmJEbCnyOTUajdyhux9FhXOQQY0vBJ1udnEjZm_vrCwKZgWldxHmBw5vVurYRtQjEi2c8hFjmTxAVHyprZxoDdQKA9hSazp-ZZ0RyTW3RGyC8WHhO1eKZh5Y8yI3GDAiiiw5DI-HvivGLSr0A0nusUka0/s1600/1.jpg" },
         
-        { nombre: "La estrella", ubicacion: "Huila", tipo: "procesado", url: "https://yohandesarrollador06.github.io/Base-de-datos/", img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwGWSEXE_PzIsKNiOTYcVVIjt7CjD1txbjExKznfrjbDeUKQSh3q0-aOno8PZvqE3e1lP2-lMltO5oVmlOaNULfWHwKH8jHhFcyxwSxJd8rCLIjky-gcE98VNib42tenIsb1EKQKQC7izUr_2yIhKBG4qdY_tGPH5KXDnZTQ4eNVwhM7bJP4tzqMXFx7eK/s1280/la%20estrella1.jpg" },
+        { nombre: "La estrella", ubicacion: "Huila", url: "https://yohandesarrollador06.github.io/Base-de-datos/", img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwGWSEXE_PzIsKNiOTYcVVIjt7CjD1txbjExKznfrjbDeUKQSh3q0-aOno8PZvqE3e1lP2-lMltO5oVmlOaNULfWHwKH8jHhFcyxwSxJd8rCLIjky-gcE98VNib42tenIsb1EKQKQC7izUr_2yIhKBG4qdY_tGPH5KXDnZTQ4eNVwhM7bJP4tzqMXFx7eK/s1280/la%20estrella1.jpg" },
         
-        { nombre: "???", ubicacion: "???", tipo: "???", url: "???", img: "???" },
+        { nombre: "El progreso", ubicacion: "El vegon", url: "finca_el_progreso/menu", img: "https://res.cloudinary.com/dmul5zfes/image/upload/v1734742268/IMG-20241220-WA0008_rvfgtt.jpg" },
         
-        { nombre: "???", ubicacion: "???", tipo: "???", url: "???", img: "???" },
+        { nombre: "???", ubicacion: "???", url: "???", img: "???" },
         
-        { nombre: "???", ubicacion: "???", tipo: "???", url: "???", img: "???" },
+        { nombre: "???", ubicacion: "???", url: "???", img: "???" },
         
-        { nombre: "???", ubicacion: "???", tipo: "???", url: "???", img: "???" }
+        { nombre: "???", ubicacion: "???", url: "???", img: "???" }
     ];
 
     // Función para filtrar las fincas
