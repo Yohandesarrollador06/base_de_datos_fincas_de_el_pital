@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conecta Cafeteros</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #EFEAE4;
+            color: #3E2723;
+        }
+
+        header {
+            background: linear-gradient(45deg, #4E342E, #3E2723);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            color: #FFE0B2;
+            font-size: 2.2rem;
+        }
+
+        #logo {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            border: 2px solid #FFE0B2;
+            margin-right: 5px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        main p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #5D4037;
+            text-align: center;
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .filter-container input {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #8D6E63;
+            width: 300px;
+        }
+
+        .filter-container select {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #8D6E63;
+        }
+
+        .filter-container button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #8D6E63;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .filter-container button:hover {
+            background-color: #795548;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .finca-card {
+            background-color: #FFF;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .finca-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .finca-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .finca-card h2 {
+            margin: 15px 0;
+            font-size: 1.5rem;
+            color: #4E342E;
+            text-align-last: center;
+        }
+
+        .finca-card p {
+            color: #5D4037;
+            margin: 10px 0;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .finca-card .button-group {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            background-color: #EFEAE4;
+        }
+
+        .finca-card .button-group a {
+            text-decoration: none;
+        }
+
+        .finca-card .button-group button {
+            background-color: #8D6E63;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .finca-card .button-group button:hover {
+            background-color: #795548;
+        }
+
+        footer {
+            background: linear-gradient(45deg, #4E342E, #3E2723);
+            color: #FFE0B2;
+            padding: 15px;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer a {
+            color: #FFCC80;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+    </style>
+</head>
+<body>
+
+<header>
+    <img id="logo" src="https://via.placeholder.com/70" alt="Logo">
+    <h1>Pital</h1>
+</header>
+
+<main>
+    <p>Explora y conecta con diferentes fincas cafeteras para llevar sus productos al mercado global.</p>
+
+    <div class="filter-container">
+        <input type="text" id="search-input" placeholder="Buscar por nombre o ubicación">
+        <button onclick="filterFincas()">Filtrar</button>
+    </div>
+
+    <div class="button-container" id="finca-list">
+        <!-- Aquí se renderizarán las tarjetas de las fincas -->
+    </div>
+</main>
+
+<footer>
+    <p>¿Interesado en agregar tu finca? Contáctanos:</p>
+    <p>WhatsApp: <a href="https://wa.me/3144717995">3144717995</a> | Facebook: <a href="https://www.facebook.com">App Agrícolas</a></p>
+</footer>
+
+<script>
+    // Lista de fincas
+    const fincas = [
+        { nombre: "El Nicho", ubicacion: "Huila", tipo: "procesado", url: "#", img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_-EHYTvgBz-dUWr7YPNz8SzfFia7d4yQcjupoPu5Kq5UIhRkEZAyPjmdURMhyX5tINwWMPwC0bHCosXGwUu-teXF-4DOKlgCMb1fm7_YU7pu_0V2rujUrvcfQDuDGalyQkogXhp3yTkkQDBnoaNUeyDqoRmgcYWmZDRhV2Sj0eCjJvUjm23nPqJPwAj4/s1600/1.jpg" },
+        
+        { nombre: "Villa del Pilar", ubicacion: "Huila", tipo: "procesado", url: "https://yohandesarrollador06.github.io/base_de_datos_finca_villa_del_pilar.github.io/", img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiufsxn8qgtFlEQBo8QR2A7kPIQbNJVW_C8ZorBCNkaNFn2-gjqzYcUEhwF0M__yIgmXUqvlCKS2NxGiYCS-HTiEdxNiDea-1AFNvA6jbY693uW52lhFRhOSE4Btg9mGJVtkdo9xgT43-PzsJut4Gc7YbJPTsyylIT-oTeXfyWZfApeDJ2ypJA69Dl_Mpo/s1600/logo%20villa%20del%20pilar.jpg" },
+        
+        { nombre: "Café Rubiel", ubicacion: "Huila", tipo: "sin procesar", url: "#", img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-fRS51BzWlfjhR6TRF6lb3DgxxSe6GrXFECRmJEbCnyOTUajdyhux9FhXOQQY0vBJ1udnEjZm_vrCwKZgWldxHmBw5vVurYRtQjEi2c8hFjmTxAVHyprZxoDdQKA9hSazp-ZZ0RyTW3RGyC8WHhO1eKZh5Y8yI3GDAiiiw5DI-HvivGLSr0A0nusUka0/s1600/1.jpg" },
+        
+        { nombre: "La estrella", ubicacion: "Huila", tipo: "procesado", url: "https://yohandesarrollador06.github.io/Base-de-datos/", img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwGWSEXE_PzIsKNiOTYcVVIjt7CjD1txbjExKznfrjbDeUKQSh3q0-aOno8PZvqE3e1lP2-lMltO5oVmlOaNULfWHwKH8jHhFcyxwSxJd8rCLIjky-gcE98VNib42tenIsb1EKQKQC7izUr_2yIhKBG4qdY_tGPH5KXDnZTQ4eNVwhM7bJP4tzqMXFx7eK/s1280/la%20estrella1.jpg" },
+        
+        { nombre: "???", ubicacion: "???", tipo: "???", url: "???", img: "???" },
+        
+        { nombre: "???", ubicacion: "???", tipo: "???", url: "???", img: "???" },
+        
+        { nombre: "???", ubicacion: "???", tipo: "???", url: "???", img: "???" },
+        
+        { nombre: "???", ubicacion: "???", tipo: "???", url: "???", img: "???" }
+    ];
+
+    // Función para filtrar las fincas
+    function filterFincas() {
+        const searchInput = document.getElementById('search-input').value.toLowerCase();
+        const fincaList = document.getElementById('finca-list');
+
+        // Filtrar las fincas según el texto ingresado
+        const filteredFincas = fincas.filter(finca =>
+            finca.nombre.toLowerCase().includes(searchInput) || 
+            finca.ubicacion.toLowerCase().includes(searchInput)
+        );
+
+        // Verificar si hay resultados
+        if (filteredFincas.length === 0) {
+            fincaList.innerHTML = `<p style="text-align: center; color: #5D4037;">No se encontraron fincas.</p>`;
+            return;
+        }
+
+        // Renderizar las fincas filtradas
+        fincaList.innerHTML = filteredFincas.map(finca => `
+            <div class="finca-card">
+                <img src="${finca.img}" alt="${finca.nombre}">
+                <h2>${finca.nombre}</h2>
+                <p>Ubicación: ${finca.ubicacion}</p>
+                <div class="button-group">
+                    <a href="${finca.url}" target="_blank"><button>Ver Más</button></a>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // Mostrar todas las fincas inicialmente
+    document.addEventListener('DOMContentLoaded', filterFincas);
+</script>
+
+</body>
+</html>
